@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Input } from '../app/components/ui/input'; // Ajuste o caminho se necessário
+import { Input } from '../app/components/ui/input';
 
 // Configuração Geral da Vitrine
 const meta: Meta<typeof Input> = {
