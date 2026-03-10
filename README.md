@@ -1,36 +1,29 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🧩 Serra UI - A Biblioteca de Componentes da Serra Jr
 
-## Getting Started
+Bem-vindo ao **Serra UI**, o catálogo oficial de componentes da Serra Jr, construído com Next.js, Tailwind CSS e Storybook.
 
-First, run the development server:
+## 🚀 Como usar um componente no projeto do cliente
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### Passo 1: Acesse a Vitrine Oficial
+Abra o link do nosso Storybook (hospedado no GitHub Pages) e encontre o componente que você precisa no menu lateral (ex: `Button`, `Input`, `Card`).
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Passo 2: Teste e Copie o Código
+1. Brinque com os controles na aba **Canvas** para ver as variações de tamanho, cor e estados do componente.
+2. Acesse a aba **Docs** no topo da tela.
+3. Vá até o bloco de código do componente e clique em **Show Code**.
+4. Copie todo o código exibido.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Passo 3: Cole e Use
+WIP
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## 🛠️ O Fluxo para adicionar novos componentes
 
-To learn more about Next.js, take a look at the following resources:
+Para colocar um componente novo no ar:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Programe o arquivo base do seu componente dentro de `components/ui/`.
+2. Documente as variações criando um arquivo correspondente na pasta `stories/` (ex: `MeuComponente.stories.tsx`).
+3. Faça o `commit` e o `push` para a branch `main`.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+**A mágica do CI/CD:** Você não precisa se preocupar em colocar o site no ar. O scirpt do **GitHub Actions** vai detectar que um código novo chegou na `main`, fará o *build* automático e atualizará a vitrine oficial do Storybook na nuvem em poucos minutos.
