@@ -16,6 +16,11 @@ const meta: Meta<typeof Card> = {
   component: Card,
   parameters: {
     layout: 'centered',
+    docs: {
+      description: {
+        component: 'Para instalar este componente no seu projeto, rode:\n\n```bash\nnpx serraui add card\n```',
+      },
+    },
   },
   tags: ['autodocs'],
 };
@@ -81,5 +86,41 @@ export const FormularioLogin: Story = {
         <Button className="w-full">Entrar</Button>
       </CardFooter>
     </Card>
+  ),
+};
+
+export const EfeitoLift: Story = {
+  render: () => (
+    <Card className="w-[350px]" hoverEffect="lift">
+      <CardHeader>
+        <CardTitle>Efeito Lift</CardTitle>
+        <CardDescription>Passe o mouse por cima.</CardDescription>
+      </CardHeader>
+      <CardContent>
+        <p className="text-sm">O card levanta levemente para indicar interatividade.</p>
+      </CardContent>
+    </Card>
+  ),
+};
+
+export const EfeitoGlow: Story = {
+  render: () => (
+    <Card className="w-[350px]" hoverEffect="glow">
+      <CardHeader>
+        <CardTitle>Efeito Glow</CardTitle>
+        <CardDescription>Passe o mouse por cima.</CardDescription>
+      </CardHeader>
+      <CardContent>
+        <p className="text-sm">Ideal para destacar planos ou serviços.</p>
+      </CardContent>
+    </Card>
+  ),
+};
+
+import { CardSkeleton } from '../app/components/ui/card';
+
+export const CarregandoSkeleton: StoryObj<typeof CardSkeleton> = {
+  render: () => (
+    <CardSkeleton className="w-[350px]" />
   ),
 };

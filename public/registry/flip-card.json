@@ -1,0 +1,13 @@
+{
+  "name": "flip-card",
+  "dependencies": [
+    "clsx",
+    "tailwind-merge"
+  ],
+  "files": [
+    {
+      "name": "flip-card.tsx",
+      "content": "\"use client\";\r\n\r\nimport { useState } from \"react\";\r\nimport { cn } from \"../../lib/utils\"\r\n\r\ninterface FlipCardProps {\r\n  /** Conteúdo da parte da frente do cartão */\r\n  front: React.ReactNode;\r\n  /** Conteúdo da parte de trás do cartão */\r\n  back: React.ReactNode;\r\n  /** Classes adicionais para controlar altura/largura */\r\n  className?: string;\r\n  /** Se true, o cartão vira ao passar o mouse por cima */\r\n  flipOnHover?: boolean;\r\n  /** Se true, o cartão vira ao ser clicado */\r\n  flipOnClick?: boolean;\r\n}\r\n\r\nexport function FlipCard({\r\n  front,\r\n  back,\r\n  className,\r\n  flipOnHover = true,\r\n  flipOnClick = true,\r\n}: FlipCardProps) {\r\n  const [isFlipped, setIsFlipped] = useState(false);\r\n\r\n  return (\r\n    <div\r\n      className={cn(\r\n        \"group relative w-full h-[400px] [perspective:1000px] cursor-pointer\",\r\n        className\r\n      )}\r\n      onClick={() => flipOnClick && setIsFlipped(!isFlipped)}\r\n    >\r\n      <div\r\n        className={cn(\r\n          \"relative w-full h-full transition-transform duration-700 [transform-style:preserve-3d]\",\r\n          isFlipped ? \"[transform:rotateY(180deg)]\" : \"\",\r\n          flipOnHover && !isFlipped ? \"md:group-hover:[transform:rotateY(180deg)]\" : \"\"\r\n        )}\r\n      >\r\n        {/* Frente do Cartão */}\r\n        <div className=\"absolute inset-0 w-full h-full [backface-visibility:hidden]\">\r\n          {front}\r\n        </div>\r\n\r\n        {/* Verso do Cartão */}\r\n        <div className=\"absolute inset-0 w-full h-full [backface-visibility:hidden] [transform:rotateY(180deg)]\">\r\n          {back}\r\n        </div>\r\n      </div>\r\n    </div>\r\n  );\r\n}"
+    }
+  ]
+}
